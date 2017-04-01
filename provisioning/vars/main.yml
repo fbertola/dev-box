@@ -3,8 +3,28 @@ ansible_os_family: Debian
 
 workspace: /root
 hostname: deviant
-timezone: Europe/Rome
+
+timezone_zone: Europe/Rome
 keyboard_layout: it
 
 java_packages:
   - openjdk-8-jdk
+
+users:
+  - username: vagrant
+    oh_my_zsh:
+      theme: robbyrussell
+      plugins:
+        - git
+        - mvn
+      atom_packages:
+        - linter
+        - atom-beautify
+        - file-icons
+      atom_config:
+        "*":
+          core:
+            projectHome: "/home/vagrant/workspace"
+          editor:
+            showIndentGuide: true
+            showInvisibles: true

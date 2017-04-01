@@ -7,10 +7,15 @@
     - vars/main.yml
 
   roles:
+    - tersmitten.timezone
     - geerlingguy.git
     - geerlingguy.Java
+    - gantsign.oh-my-zsh
+    - thydel.r-base
+    - tersmitten.rstudio
+    - wtanaka.apache-spark
+    - gantsign.atom
 
-# FIXME: guest session :(
   pre_tasks:
     - name: Wait for App Center (sigh...)
       shell: >
@@ -29,3 +34,7 @@
         gsettings set org.gnome.desktop.input-sources current 1;
       become: true
       become_user: vagrant
+
+    - name: Disable Guest account
+      shell: echo "[SeatDefaults]\nallow-guest=false\n" > /etc/lightdm/lightdm.conf.d/50-no-guest.conf
+      become: true
