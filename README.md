@@ -18,7 +18,7 @@ The following software must be installed on your local machine before you can us
 Make sure all the required software (listed above) is installed, then `cd` to the root directory and run:
 
 ```bash
-packer build ubuntu1404.json
+packer build elementaryos-0.4-amd64.json
 ```
 
 After a few minutes, Packer should tell you the box was generated successfully.
