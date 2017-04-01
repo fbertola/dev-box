@@ -25,7 +25,7 @@ After a few minutes, Packer should tell you the box was generated successfully.
 
 ## Provisioning with Vagrant
 
-There's an included Vagrantfile that allows to provision the built Vagrant box. From this same directory, run the following commands after building the boxes:
+There's an included Vagrantfile that allows to provision the built Vagrant box. From this same directory, run the following commands after building the box:
 
 ```bash
 vagrant box add ./build/elementaryos-0.4-amd64.box fbertola/elementaryos-0.4-amd64 -f
