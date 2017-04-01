@@ -1,0 +1,31 @@
+---
+
+- hosts: deviant
+  gather_facts: yes
+
+  vars_files:
+    - vars/main.yml
+
+  roles:
+    - geerlingguy.git
+    - geerlingguy.Java
+
+# FIXME: guest session :(
+  pre_tasks:
+    - name: Wait for App Center (sigh...)
+      shell: >
+        while fuser /var/lib/apt/lists/lock; do sleep 1; done;
+        while fuser /var/cache/apt/archives/lock; do sleep 1; done;
+        while fuser /var/lib/dpkg/lock; do sleep 1; done;
+      become: true
+      args:
+        executable: /bin/bash
+
+  tasks:
+    - name: Set keyboard layout
+      shell: >
+        export DISPLAY=:0.0;
+        gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us'), ('xkb', '{{ keyboard_layout }}')]";
+        gsettings set org.gnome.desktop.input-sources current 1;
+      become: true
+      become_user: vagrant

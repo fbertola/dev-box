@@ -1,0 +1,3 @@
+.vagrant/
+build/
+output-virtualbox-iso/

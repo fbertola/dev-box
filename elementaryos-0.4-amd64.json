@@ -1,0 +1,65 @@
+{
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "virtualbox_version_file": ".vbox_version",
+      "headless": false,
+      "guest_os_type": "Ubuntu_64",
+      "disk_size": 40960,
+      "iso_url": "/Users/federico/Downloads/elementaryos-0.4-stable-amd64.20160921.iso",
+      "iso_checksum": "8035e0a2fbc977d931af22dcefb77ed6fe87815d89188a43e2cb345f13e629cf",
+      "iso_checksum_type": "sha256",
+      "boot_command": [
+        "<esc><esc><esc><wait><enter><wait>",
+        "/casper/vmlinuz",
+        " hostname={{ .Name }}",
+        " boot=casper",
+        " auto=true",
+        " priority=critical",
+        " automatic-ubiquity debug-ubiquity",
+        " url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
+        " initrd=/casper/initrd.lz noprompt --",
+        "<wait><enter><wait>"
+      ],
+      "boot_wait": "5s",
+      "http_directory": "http",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "1024"
+        ],
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
+      ],
+      "shutdown_command": "echo 'vagrant' | sudo -S /sbin/shutdown -hP now "
+    }
+  ],
+  "post-processors": [
+    {
+      "output": "build/elementaryos-0.4-amd64.box",
+      "type": "vagrant"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
+      "scripts": [
+        "scripts/sudoers.sh",
+        "scripts/vagrant.sh",
+        "scripts/vboxguest.sh",
+        "scripts/cleanup.sh"
+      ]
+    }
+  ]
+}

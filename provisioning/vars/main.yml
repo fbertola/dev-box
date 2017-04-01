@@ -1,0 +1,10 @@
+---
+ansible_os_family: Debian
+
+workspace: /root
+hostname: deviant
+timezone: Europe/Rome
+keyboard_layout: it
+
+java_packages:
+  - openjdk-8-jdk
