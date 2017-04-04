@@ -18,6 +18,9 @@ Vagrant.configure("2") do |config|
 
     # Customize the amount of cores allocated
     vb.cpus = 2
+
+    # Enable bi-directional clipboard
+    vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
   end
 
   config.vm.hostname = "deviant"
