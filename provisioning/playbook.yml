@@ -10,6 +10,9 @@
     - tersmitten.timezone
     - geerlingguy.git
     - geerlingguy.Java
+    - geerlingguy.nodejs
+    - gantsign.maven
+    - gantsign.maven-color
     - gantsign.oh-my-zsh
     - thydel.r-base
     - tersmitten.rstudio

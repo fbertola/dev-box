@@ -1,6 +1,9 @@
 ---
 - src: geerlingguy.git
 - src: geerlingguy.java
+- src: geerlingguy.nodejs
+- src: gantsign.maven
+- src: gantsign.maven-color
 - src: thydel.r-base
 - src: tersmitten.rstudio
 - src: wtanaka.apache-spark
