@@ -6,7 +6,6 @@
 - src: gantsign.maven-color
 - src: thydel.r-base
 - src: tersmitten.rstudio
-- src: wtanaka.apache-spark
 - src: gantsign.atom
 - src: gantsign.oh-my-zsh
 - src: tersmitten.timezone

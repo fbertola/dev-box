@@ -16,7 +16,6 @@
     - gantsign.oh-my-zsh
     - thydel.r-base
     - tersmitten.rstudio
-    - wtanaka.apache-spark
     - gantsign.atom
 
   pre_tasks:
