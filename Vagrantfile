@@ -14,10 +14,10 @@ Vagrant.configure("2") do |config|
     vb.gui = true
 
     # Customize the amount of memory on the VM:
-    vb.memory = 2048
+    vb.memory = 4096
 
     # Customize the amount of cores allocated
-    vb.cpus = 2
+    vb.cpus = 4
 
     # Enable bi-directional clipboard
     vb.customize ["modifyvm", :id, "--clipboard", "bidirectional"]
@@ -34,5 +34,8 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "provisioning/playbook.yml"
     ansible.sudo = true
   end
+
+  # Synced folder
+  config.vm.synced_folder "workspace", "/home/vagrant/workspace"
 
 end

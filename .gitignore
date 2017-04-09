@@ -1,3 +1,4 @@
 .vagrant/
 build/
+workspace/
 output-virtualbox-iso/
