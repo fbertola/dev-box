@@ -1,4 +1,4 @@
-# Development machine - ElementaryOS Vagrant Box
+# ⚙️ Development machine - ElementaryOS Vagrant Box
 
 [![GitHub license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/fbertola/dev-box/blob/master/LICENSE)
 
@@ -25,7 +25,7 @@ After a few minutes, Packer should tell you the box was generated successfully.
 
 ## Provisioning with Vagrant
 
-There's an included Vagrantfile that allows to provision the built Vagrant box. I used Ansible for provisioning, using roles from [Ansible-Galaxy](https://galaxy.ansible.com). From this same directory of the Vagrantfile, run the following command for downloading the necessary roles:
+There's an included Vagrantfile that allows to provision the built Vagrant box. Ansible is used for provisioning, using roles from [Ansible-Galaxy](https://galaxy.ansible.com). From the same directory of the Vagrantfile, run the following command for downloading the necessary roles:
 
 ```bash
 ansible-galaxy install -r requirements.yml
