@@ -6,7 +6,10 @@
       "headless": false,
       "guest_os_type": "Ubuntu_64",
       "disk_size": 40960,
-      "iso_url": "/Users/federico/Downloads/elementaryos-0.4-stable-amd64.20160921.iso",
+      "iso_url": [
+        "./iso/elementaryos-0.4-stable-amd64.20160921.iso",
+        "https://ams3.dl.elementary.io/download/MTQ5MTkyNDI0Nw==/elementaryos-0.4-stable-amd64.20160921.iso"
+      ],
       "iso_checksum": "8035e0a2fbc977d931af22dcefb77ed6fe87815d89188a43e2cb345f13e629cf",
       "iso_checksum_type": "sha256",
       "boot_command": [
